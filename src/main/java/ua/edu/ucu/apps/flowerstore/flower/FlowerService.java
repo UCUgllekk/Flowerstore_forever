@@ -1,16 +1,21 @@
 package ua.edu.ucu.apps.flowerstore.flower;
 
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Service
 public class FlowerService {
-
-    @GetMapping("flower")
-	public List<Flower> getFlowers(){
-		return List.of(new Flower(FlowerColor.RED, 100, FlowerType.CHAMOMILE, 100));
-	}
-	
+    private FlowerRepository flowerRepository;
+    @Autowired
+    public FlowerService(FlowerRepository flowerRepository){
+        this.flowerRepository = flowerRepository;
+    }
+    public List<Flower> getFlowers(){
+        return flowerRepository.findAll();
+    }
+    public void addFlower(Flower flower){
+        flowerRepository.save(flower);
+    }
 }

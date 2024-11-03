@@ -1,43 +1,44 @@
 package ua.edu.ucu.apps.flowerstore.flower;
-
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter @Setter @AllArgsConstructor
+@Setter @Getter @ToString @AllArgsConstructor @Entity @Table
 public class Flower extends Item{
-    private FlowerColor color;
-    private int sepalLenght;
+    @Id
+    private Long id;
+    private String color;
+    private int sepalLength;
     private double price;
-    private FlowerType flowerType;
+    private FlowerType type;
     private String description;
-
-    public String getColor(){
-        return color.ToString();
-    }
-
-    public Flower(){
-        color = null;
-        sepalLenght = 0;
+    public Flower() {
+        sepalLength = 0;
         price = 0;
-        flowerType = null;
-        description = "";
     }
-
-    public Flower(FlowerColor color, int sepal, FlowerType type, double price){
+    public double getPrice(){
+        return price;
+    }
+    public Flower(String color, int sepalLength, double price, FlowerType type){
         this.color = color;
-        sepalLenght = sepal;
+        this.sepalLength = sepalLength;
         this.price = price;
-        flowerType = type;
-        description = String.format("%s flower with %d sepal lenght, %s type that costs %d", color, sepal, type, price);
+        this.type = type;
+        this.description = "A flower!";
     }
 
-    public Flower(Flower flower){
+    public Flower(Flower flower) {
         color = flower.color;
-        sepalLenght = flower.sepalLenght;
+        sepalLength = flower.sepalLength;
         price = flower.price;
-        flowerType = flower.flowerType;
+        type = flower.type;
     }
+    public String getColor() {
+        return color.toString();
+    }
+
 }
