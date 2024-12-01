@@ -3,9 +3,14 @@ package ucu.edu.apps.flowerstoreforever;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ucu.edu.apps.flowerstoreforever.decorators.BasketDecorator;
-import ucu.edu.apps.flowerstoreforever.decorators.PaperDecorator;
-import ucu.edu.apps.flowerstoreforever.decorators.RibbonDecorator;
+
+import ucu.edu.apps.flowerstoreforever.Decorator.BasketDecorator;
+import ucu.edu.apps.flowerstoreforever.Decorator.PaperDecorator;
+import ucu.edu.apps.flowerstoreforever.Decorator.RibbonDecorator;
+import ucu.edu.apps.flowerstoreforever.Flower.Flower;
+import ucu.edu.apps.flowerstoreforever.Flower.FlowerBucket;
+import ucu.edu.apps.flowerstoreforever.Flower.FlowerColor;
+import ucu.edu.apps.flowerstoreforever.Flower.FlowerPack;
 
 public class DecoratorsTests {
     private FlowerBucket flowerBucket;

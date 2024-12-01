@@ -1,7 +1,7 @@
 package ucu.edu.apps.flowerstoreforever;
 
-import ucu.edu.apps.flowerstoreforever.deliveries.Delivery;
-import ucu.edu.apps.flowerstoreforever.payments.Payment;
+import ucu.edu.apps.flowerstoreforever.Delivery.Delivery;
+import ucu.edu.apps.flowerstoreforever.Payment.Payment;
 
 import java.util.LinkedList;
 

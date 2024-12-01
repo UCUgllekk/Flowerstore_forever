@@ -2,12 +2,10 @@ package ucu.edu.apps.flowerstoreforever;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ucu.edu.apps.flowerstoreforever.payments.
-        CreditCardPaymentStrategy;
-import ucu.edu.apps.flowerstoreforever.payments.
-        PayPalPaymentStrategy;
-import ucu.edu.apps.flowerstoreforever.payments.
-        Payment;
+
+import ucu.edu.apps.flowerstoreforever.Payment.CreditCardPaymentStrategy;
+import ucu.edu.apps.flowerstoreforever.Payment.PayPalPaymentStrategy;
+import ucu.edu.apps.flowerstoreforever.Payment.Payment;
 
 public class PaymentTests {
     private Payment creditCardPay;
